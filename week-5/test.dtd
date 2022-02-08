@@ -1,0 +1,13 @@
+<!DOCTYPE products 
+[
+  <!ELEMENT catalog (catalog_item+)>
+  <!ELEMENT catalog_item (name, sizes, prices)>
+  <!ATTLIST catalog_item product_id #REQUIRED>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT sizes (size+)>
+  <!ATTLIST manufacturer id CDATA #REQUIRED>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT prices (price+)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT productItems (#PCDATA)>
+]>

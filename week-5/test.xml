@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE products SYSTEM test.dtd">
+<catalog>
+    <catalog_item product_id="ida332d8d2-86d7-11ec-a8a3-0242ac120002">
+      <name>Microfleece hoodie</name>
+      <sizes>
+        <size  description="xs">0 items</size>
+        <size  description="s">3 items</size>
+        <size  description="m">13 items</size>
+        <size  description="l">5 items</size>
+        <size  description="xl">2 items</size>
+      </sizes>
+      <prices>
+        <price currency="USD">$49.99</price>
+        <price currency="CAD">$59.99</price>
+      </prices>
+    </catalog_item>
+    <catalog_item product_id="a332dac6-86d7-11ec-a8a3-0242ac120002">
+      <name>Vintage Soft Hoodie</name>
+      <sizes>
+        <size  description="xs">3 items</size>
+        <size  description="s">8 items</size>
+        <size  description="m">25 items</size>
+        <size  description="l">12 items</size>
+        <size  description="xl">4 items</size>
+      </sizes>
+      <prices>
+        <price currency="USD">$39.99</price>
+        <price currency="CAD">$49.99</price>
+      </prices>
+    </catalog_item>
+    <catalog_item product_id="a332dbf2-86d7-11ec-a8a3-0242ac120002">
+      <name>Crewneck Sweatshirt</name>
+      <sizes>
+        <size  description="xs">0 items</size>
+        <size  description="s">0 items</size>
+        <size  description="m">15 items</size>
+        <size  description="l">13 items</size>
+        <size  description="xl">0 items</size>
+      </sizes>
+      <prices>
+        <price currency="CAD">$47.97</price>
+      </prices>
+    </catalog_item>
+    <catalog_item product_id="a332dd0a-86d7-11ec-a8a3-0242ac120002">
+      <name>French Terry Raglan Crewneck Sweatshirt</name>
+      <sizes>
+        <size  description="xs">0 items</size>
+        <size  description="s">0 items</size>
+        <size  description="m">0 items</size>
+        <size  description="l">1 items</size>
+        <size  description="xl">0 items</size>
+      </sizes>
+      <prices>
+        <price currency="USD">$37.97</price>
+      </prices>
+    </catalog_item>
+</catalog>

@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>Test Input</title>
+    <script language="JavaScript">
+      function testResults(event) {
+        event.preventDefault();
+
+        const form = event.target;
+
+        const inputControl = form.inputbox;
+        const radioControl = form.fav_language;
+        const checkboxes = form.querySelectorAll(
+          "input[type=checkbox]:checked"
+        );
+        const inputValue = inputControl.value;
+        const radioSelection = radioControl.value;
+
+        let checkedValues = [];
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkedValues.push(checkboxes[i].value);
+        }
+
+        console.log(
+          `Name: ${inputValue}\n Favourite Language: ${radioSelection} \n Songs: ${checkedValues}`
+        );
+
+        inputControl.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <form onSubmit="return testResults(event)" action="" method="get">
+      Enter your name and lastname: <br />
+      <input type="text" name="inputbox" value="" required />
+      <button type="submit">Submit</button>
+
+      <p>Please select your favorite Web language:</p>
+        <input type="radio" name="fav_language" value="HTML" />  
+      <label for="html">HTML</label><br />
+        <input type="radio" id="css" name="fav_language" value="CSS" />  
+      <label for="css">CSS</label><br />
+       
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language"
+        value="JavaScript"
+      />
+        <label for="javascript">JavaScript</label><br />
+      <br />
+      <fieldset>
+        <legend>Check all Jazz songs that go well with wine?</legend>
+        <input
+          type="checkbox"
+          name="music_choice"
+          value="Killing Me
+        Softly - Frank Sinatra"
+        />Killing Me Softly - Frank Sinatra<br />
+        <input
+          type="checkbox"
+          name="music_choice"
+          value="Sway - Dean
+        Martin"
+        />Sway - Dean Martin<br />
+        <input
+          type="checkbox"
+          name="music_choice"
+          value="Amado Mio -
+        Pink Martini ft. Storm Large"
+        />Amado Mio - Pink Martini ft. Storm Large<br />
+        <input
+          type="checkbox"
+          name="music_choice"
+          value="La vie en
+        rose - Louis Armstrong"
+        />La vie en rose - Louis Armstrong<br />
+        <br />
+      </fieldset>
+    </form>
+  </body>
+</html>
