@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Test Input</title>
+    <link rel="stylesheet" href="project.css" />
+  </head>
+  <body>
+    <form id="searchBook" onreset="onReset()">
+      <input
+        type="text"
+        name="search"
+        id="input-search-data"
+        placeholder="Search"
+      />
+      <button type="submit">Search</button>
+
+      <h4>Filter by Author Gender:</h4>
+      <input
+        type="checkbox"
+        id="gender1"
+        name="gender1"
+        value="Male"
+        onchange="checkBoxSelect()"
+      />
+      <label for="gender1"> Male</label><br />
+      <input
+        type="checkbox"
+        id="gender2"
+        name="gender2"
+        value="Female"
+        onchange="checkBoxSelect()"
+      />
+      <label for="gender2"> Female</label><br />
+
+      <button type="reset" class="resetButton">Reset</button>
+    </form>
+
+    <table id="project-table">
+      <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Sex</th>
+        <th>Title</th>
+        <th>Language</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Publish Date</th>
+      </tr>
+    </table>
+    <script type="text/javascript" src="./project.js"></script>
+  </body>
+</html>

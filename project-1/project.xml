@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+   <book id="1">
+      <author sex="Male">Matthew</author>
+      <title lang="English">Desert Solitarie</title>
+      <genre>Adventure</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+   </book>
+   <book id="2">
+      <author sex="Female">Chimamanda</author>
+      <title lang="French">Half of a yellow sun</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-12-16</publish_date>
+   </book>
+   <book id="3">
+      <author sex="Female">Akutagawa</author>
+      <title lang="English">Rashomon and Seventeen other stories</title>
+      <genre>Crime</genre>
+      <price>9.95</price>
+      <publish_date>2000-11-19</publish_date>
+   </book>
+   <book id="4">
+      <author sex="Female">Sveltlana</author>
+      <title lang="English">Voices from chernobyl</title>
+      <genre>Romance</genre>
+      <price>12.45</price>
+      <publish_date>2001-04-10</publish_date>
+   </book>
+   <book id="5">
+      <author sex="Female">Jorge Amado</author>
+      <title lang="English">Gabriela Clove and Cinnamon</title>
+      <genre>Fantasy</genre>
+      <price>8.95</price>
+      <publish_date>2002-09-10</publish_date>
+   </book>
+   <book id="6">
+      <author sex="Male">Italo Calvino</author>
+      <title lang="English">Invisible Cities</title>
+      <genre>Romance</genre>
+      <price>7.95</price>
+      <publish_date>2000-09-02</publish_date>
+   </book>
+   <book id="7">
+      <author sex="Male">Eileen Chang</author>
+      <title lang="Spanish">Love in Fallen City</title>
+      <genre>Romance</genre>
+      <price>21.95</price>
+      <publish_date>2001-12-02</publish_date>
+   </book>
+   <book id="8">
+      <author sex="Male">J.M. Coetzee</author>
+      <title lang="English">Life and Times Of Michael K</title>
+      <genre>Horror</genre>
+      <price>14.95</price>
+      <publish_date>2001-12-06</publish_date>
+   </book>
+   <book id="9">
+      <author sex="Female">Julio Cortazar</author>
+      <title lang="French">Hopscotch</title>
+      <genre>Science Fiction</genre>
+      <price>16.95</price>
+      <publish_date>2001-11-02</publish_date>
+   </book>
+   <book id="10">
+      <author sex="Male">Elena Ferrante</author>
+      <title lang="English">My Brilliant Friend</title>
+      <genre>Fantasy</genre>
+      <price>36.95</price>
+      <publish_date>2003-12-09</publish_date>
+   </book>
+   <book id="11">
+      <author sex="Female">Eduardo Galeano</author>
+      <title lang="French">Mirror:Stories of Almost Everyone</title>
+      <genre>Fantasy</genre>
+      <price>36.95</price>
+      <publish_date>2000-12-01</publish_date>
+   </book>
+   <book id="12">
+      <author sex="Female">Keri Hulme</author>
+      <title lang="English">The Bone People</title>
+      <genre>Crime</genre>
+      <price>49.95</price>
+      <publish_date>2001-04-16</publish_date> 
+   </book>
+     <book id="13">
+      <author sex="Male">Tove Jansson</author>
+      <title lang="English">The Summer Book</title>
+      <genre>Adventure</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+   </book>
+   <book id="14">
+      <author sex="Female">Jamaica Kincaid</author>
+      <title lang="French">Annie John</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2004-12-16</publish_date>
+   </book>
+   <book id="15">
+      <author sex="Female">Halldor Laxnees</author>
+      <title lang="English">independent people</title>
+      <genre>Crime</genre>
+      <price>19.95</price>
+      <publish_date>2005-11-19</publish_date>
+   </book>
+   <book id="16">
+      <author sex="Female">Clarice lispector</author>
+      <title lang="English">Near to the Wild Heart</title>
+      <genre>Romance</genre>
+      <price>12.45</price>
+      <publish_date>2002-04-10</publish_date>
+   </book>
+   <book id="17">
+      <author sex="Female">Javier Marias</author>
+      <title lang="English"> A Heart So White</title>
+      <genre>Fantasy</genre>
+      <price>28.95</price>
+      <publish_date>2002-09-10</publish_date>
+   </book>
+   <book id="18">
+      <author sex="Male">Rohinton Mistry</author>
+      <title lang="English">A fine Balance</title>
+      <genre>Romance</genre>
+      <price>17.95</price>
+      <publish_date>2000-09-02</publish_date>
+   </book>
+   <book id="19">
+      <author sex="Male">Abdelrahman Munif</author>
+      <title lang="Spanish">Cities of Salt</title>
+      <genre>Adventure</genre>
+      <price>21.95</price>
+      <publish_date>2001-12-02</publish_date>
+   </book>
+   <book id="20">
+      <author sex="Male">Haruki Murakami</author>
+      <title lang="English">A wild Sheep chase</title>
+      <genre>Horror</genre>
+      <price>14.95</price>
+      <publish_date>2001-12-06</publish_date>
+   </book>
+   <book id="21">
+      <author sex="Female">Georges Perec</author>
+      <title lang="French">Life: A users Mannual</title>
+      <genre>Science Fiction</genre>
+      <price>16.95</price>
+      <publish_date>2002-11-02</publish_date>
+   </book>
+   <book id="22">
+      <author sex="Male">Jose Saramango </author>
+      <title lang="English">Blindness</title>
+      <genre>Fantasy</genre>
+      <price>36.95</price>
+      <publish_date>2003-12-09</publish_date>
+   </book>
+   <book id="23">
+      <author sex="Female">Bruno Schulz </author>
+      <title lang="French">The street of Crocodiles And Other stories</title>
+      <genre>Fantasy</genre>
+      <price>36.95</price>
+      <publish_date>2000-12-01</publish_date>
+   </book>
+   <book id="24">
+      <author sex="Female">W.G Seblad</author>
+      <title lang="English">The Rings of Saturn</title>
+      <genre>Adventure</genre>
+      <price>49.95</price>
+      <publish_date>2001-04-16</publish_date> 
+   </book>
+   <book id="25">
+      <author sex="Female">Edward Abbey</author>
+      <title lang="English">Desert Solitarie</title>
+      <genre>Crime</genre>
+      <price>49.95</price>
+      <publish_date>2001-04-16</publish_date> 
+   </book>
+</catalog>
