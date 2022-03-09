@@ -1,6 +1,11 @@
 [
   {
-    "title": "Everyday Italian",
+    "title": [
+      {
+        "lang": "en",
+        "value": "Everyday Italian"
+      }
+    ],
     "author": ["Giada De Laurentiis"],
     "year": 2005,
     "price": 30.0,

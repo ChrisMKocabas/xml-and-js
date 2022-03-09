@@ -1,23 +1,41 @@
-function inc(a) {
-  return a + 1;
-}
-
-const sum = function (a, b) {
-  return a + b;
+//convert to promise
+const timeout = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 };
 
-const max = (a, b) => (a > b ? a : b);
+const inc = async (a) => {
+  return new Promise((resolve) => timeout(3000).then(() => resolve(a + 1)));
+};
 
-const avg = (a, b) => {
-  const s = sum(a, b);
-  return s / 2;
+const sum = async (a, b) => {
+  return new Promise((resolve) => timeout(3000).then(() => resolve(a + b)));
+};
+
+const max = async (a, b) => {
+  return new Promise((resolve) =>
+    timeout(3000).then(() => resolve(a > b ? a : b))
+  );
+};
+
+const avg = async (a, b) => {
+  return new Promise((resolve) =>
+    timeout(3000)
+      .then(() => sum(a, b))
+      .then((s) => resolve(s / 2))
+  );
 };
 
 const obj = {
   name: "Marcus Aurelius",
-  split(sep = " ") {
-    return this.name.split(sep);
-  },
+  split(name)
+};
+
+const split = async (sep = " ") => {
+  return new Promise((resolve) =>
+    timeout(3000).then(() => resolve(this.name.split(sep)))
+  );
 };
 
 class Person {
@@ -36,9 +54,13 @@ class Person {
 
 const person = Person.of("Marcus Aurelius");
 
-console.log("inc(5) =", inc(5));
-console.log("sum(1, 3) =", sum(1, 3));
-console.log("max(8, 6) =", max(8, 6));
-console.log("avg(8, 6) =", avg(8, 6));
-console.log("obj.split() =", obj.split());
-console.log("person.split() =", person.split());
+const main = async () => {
+  console.log("inc(5) =", await inc(5));
+  console.log("sum(1, 3) =", await sum(1, 3));
+  console.log("max(8, 6) =", await max(8, 6));
+  console.log("avg(8, 6) =", await avg(8, 6));
+  console.log("obj.split() =", await obj.split());
+  console.log("person.split() =", await person.split());
+};
+
+main();
