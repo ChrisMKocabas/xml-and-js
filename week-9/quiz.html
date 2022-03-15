@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Test Input</title>
+  </head>
+  <body>
+    <h1>HTML Form</h1>
+    <br id="quizform" onreset="onReset()">
+      <label for="fname">Text field: </label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="Enter value..."
+      /><br /><br />
+
+      <label for="cars">Dropdown: </label>
+      <select id="cars" name="cars">
+        <option value="volvo">First</option>
+        <option value="saab">Second</option>
+        <option value="fiat">Third</option>
+        <option value="audi">Fourth</option>
+      </select><br /><br />
+
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <div>
+          <input type="checkbox" name="format" id="txt" value="txt" checked />
+          <label for="txt">I have a bike</label>
+        </div>
+        <div>
+          <input type="checkbox" name="format" id="csv" value="csv" />
+          <label for="csv">I have a car</label>
+        </div>
+        <div>
+          <input type="checkbox" name="format" id="csv" value="csv" />
+          <label for="csv">I have a boat</label>
+        </div>
+      </fieldset></br>
+
+      <fieldset>
+        <legend>Radio buttons</legend>
+        <div>
+          <input type="radio" name="format" id="txt" value="txt" checked />
+          <label for="txt">I have a bike</label>
+        </div>
+        <div>
+          <input type="radio" name="format" id="csv" value="csv" />
+          <label for="csv">I have a car</label>
+        </div>
+        <div>
+          <input type="radio" name="format" id="csv" value="csv" />
+          <label for="csv">I have a boat</label>
+        </div>
+      </fieldset>
+      <br />
+
+      <button type="submit" class="submitButton">Submit</button>
+      <button type="reset" class="resetButton">Cancel</button>
+
+    </form>
+  </body>
+</html>
