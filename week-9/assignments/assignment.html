@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 6 Assignment</title>
+  </head>
+  <body>
+    <form onsubmit="onSubmit(event)" onreset="onReset()">
+      <input
+        type="text"
+        name="name"
+        id="input-name-term"
+        placeholder="enter keyword"
+      />
+      <button type="submit">Apply filter</button>
+      <button type="reset">Reset</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>IP Address</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+    <script type="text/javascript" src="./assignment.js"></script>
+  </body>
+</html>
