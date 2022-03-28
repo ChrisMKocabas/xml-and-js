@@ -33,16 +33,22 @@ const renderTable = (data, nameTerm) => {
   tableBody.innerHTML = rows;
 };
 
-loadData(`./data.json`).then((data) => renderTable(data));
+loadData(
+  `https://github.com/ChrisMKocabas/xml-and-js/blob/main/week-11/api/data/products.json`
+).then((data) => renderTable(data));
 
 const onSubmit = (event) => {
   event.preventDefault();
 
   const term = event.target.name.value;
 
-  loadData(`./data.json`).then((data) => renderTable(data, term));
+  loadData(
+    `https://github.com/ChrisMKocabas/xml-and-js/blob/main/week-11/api/data/products.json`
+  ).then((data) => renderTable(data, term));
 };
 
 const onReset = () => {
-  loadData(`./data.json`).then((data) => renderTable(data));
+  loadData(
+    `https://github.com/ChrisMKocabas/xml-and-js/blob/main/week-11/api/data/products.json`
+  ).then((data) => renderTable(data));
 };
