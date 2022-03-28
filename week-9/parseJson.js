@@ -1,67 +1,50 @@
-const fs = require("fs");
-let filename = `./quiz-data.json `;
+const data = require(`./quiz-data.json`);
 
-fs.exists(filename, (exists) => {
-  if (exists) {
-    fs.stat(filename, (err, stats) => {
-      if (err) {
-        throw err;
-      }
-      if (stats.isFile()) {
-        fs.readFile(filename, null, (err, data) => {
-          if (err) {
-            throw err;
-          }
-          var testdata = JSON.parse(data);
-          console.log(JSON.parse(data));
-        });
-      } else {
-        throw new Error("This location contains not a file");
-      }
-    });
-  } else {
-    throw new Error("404: file not found");
-  }
-});
+const getActiveAccounts = (data) =>
+  data.filter(({ isActive }) => isActive === true);
+console.log(getActiveAccounts(data));
 
-const activeAccounts = data.filter((item) => item.isActive === true);
+const highestBalance = (data) =>
+  data
+    .map(({ balance }) => balance.replace(`$`, ``).replace(",", ``))
+    .reduce((max, current) => (max >= current ? max : current), 0);
 
-const highestBalance = toString(
-  data.reduce((a, b) => {
-    return Math.max(a, b);
-  })
-);
+console.log(highestBalance(data));
 
-const { HobbsMacdonald, NeldaSykes, ShawWalls, BoyerRiley, GeorgeSnider } =
-  data.reduce(
-    (accum, account) => {
-      if (account.name === "Hobbs Macdonald") {
-        accum.HobbsMacdonald.push(account.friends.name);
-      } else if (account.name === "Nelda Sykes") {
-        accum.NeldaSykes.push(account.friends.name);
-      } else if (account.name === "Shaw Walls") {
-        accum.ShawWalls.push(account.friends.name);
-      } else if (account.name === "Boyer Riley") {
-        accum.BoyerRiley.push(account.friends.name);
-      } else if (account.name === "George Snider") {
-        accum.GeorgeSnider.push(account.friends);
-      }
+const getFriends = (data) => data.map(({ friends }) => friends).flat();
+console.log(getFriends(data));
 
-      return accum;
-    },
-    {
-      HobbsMacdonald: [],
-      NeldaSykes: [],
-      ShawWalls: [],
-      BoyerRiley: [],
-      GeorgeSnider: [],
-    }
-  );
+// const { HobbsMacdonald, NeldaSykes, ShawWalls, BoyerRiley, GeorgeSnider } =
+//   data.reduce(
+//     (accum, account) => {
+//       if (account.name === "Hobbs Macdonald") {
+//         accum.HobbsMacdonald.push(account.friends.name);
+//       } else if (account.name === "Nelda Sykes") {
+//         accum.NeldaSykes.push(account.friends.name);
+//       } else if (account.name === "Shaw Walls") {
+//         accum.ShawWalls.push(account.friends.name);
+//       } else if (account.name === "Boyer Riley") {
+//         accum.BoyerRiley.push(account.friends.name);
+//       } else if (account.name === "George Snider") {
+//         accum.GeorgeSnider.push(account.friends);
+//       }
 
-var accountHolderName = data.map(
-  ((account) => {
-    return account.name;
-  }).join(", ")
-);
+//       return accum;
+//     },
+//     {
+//       HobbsMacdonald: [],
+//       NeldaSykes: [],
+//       ShawWalls: [],
+//       BoyerRiley: [],
+//       GeorgeSnider: [],
+//     }
+//   );
 
-console.log(activeAccounts());
+const getNames = (data) => data.map(({ name }) => name).join(", ");
+console.log(getNames(data));
+
+// var accountHolderName = data.map(
+//   ((account) => {
+//     return account.name;
+//   }).join(", ")
+// );

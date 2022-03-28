@@ -13,7 +13,7 @@ npm init
 install nodemon package
 
 ```bash
-npm i --save-dev nodemon
+
 ```
 
 add start/dev scripts to package.json
@@ -77,6 +77,20 @@ const server = http.createServer((req, res) => {
 });
 ```
 
+<!-- const server = http.createServer(async (req,res)=> {
+const [basePath,searchParams] = req.url.split(`?`);
+
+if (basePath === `/api/products`) {
+const = paramsObj = new URLSearchParams(searchParams);
+const params = paramsObj.entries().reduce(
+(acc,[key,value])=> ({
+...acc,[key]:value,
+}),
+{}
+);
+}
+} -->
+
 ## Step 4
 
 create controller
@@ -86,6 +100,13 @@ const products = require("../data/products");
 
 const getAll = ({ id, name, description, price }) =>
   new Promise((resolve) => {
+    let data = products;
+
+    if (name) {
+      data = data.filter ((item))=> item.price === Number(price));
+    } else if (description){
+       data = data.filter ((item))=> item.price === Number(price));
+    }
     resolve({ code: 200, data: JSON.stringify(products) });
   });
 
@@ -202,7 +223,7 @@ const getAll = ({ id, name, description, price }) =>
     let result = Array.from(products);
 
     if (id) {
-      result = result.filter((item) => item.id === id);
+      result = result.filter((item) => item.id === (Number)id);
     }
 
     if (name) {

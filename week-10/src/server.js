@@ -1,6 +1,6 @@
 const http = require("http");
 
-const product = require("./controllers/product");
+const product = require("../api/controllers/product");
 
 const parseURLParams = (value) => {
   const params = new URLSearchParams(value);
