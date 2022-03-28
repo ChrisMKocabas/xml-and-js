@@ -24,9 +24,9 @@ const renderTable = (data, nameTerm) => {
   }
 
   const rows = source.reduce(
-    (acc, { id, name, value }) =>
+    (acc, { id, name, description, price }) =>
       acc +
-      `<tr id="table-row-${id}"><td>${id}</td><td>${name}</td><td>${value}</td></tr>`,
+      `<tr id="table-row-${id}"><td>${id}</td><td>${name}</td><td>${description}</td><td>${price}</td></tr>`,
     ``
   );
 
