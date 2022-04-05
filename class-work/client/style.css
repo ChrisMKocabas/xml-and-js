@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  line-height: 2.5vw;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.493);
+  border-collapse: separate;
+}
+
+th {
+  background-color: rgb(247, 227, 119);
+}
+
+td {
+  padding: 5px;
+  background-color: whitesmoke;
+}
+
+.resetButton {
+  margin: 15px 10px 0;
+  border: 1px, solid, black;
+}
