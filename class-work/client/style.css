@@ -23,3 +23,40 @@ td {
   margin: 15px 10px 0;
   border: 1px, solid, black;
 }
+
+#myForm {
+  width: fit-content;
+  padding: 1vw;
+}
+
+#container {
+  display: flex;
+}
+
+#gender-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 200px;
+  width: 400px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#marital-status {
+  display: flex;
+  justify-content: space-evenly;
+  height: 200px;
+  width: 150px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#color-container {
+  padding: 1vw;
+  display: flex;
+  justify-content: left;
+}
+
+#input-field-container {
+  padding: 1vw;
+  justify-content: left;
+}

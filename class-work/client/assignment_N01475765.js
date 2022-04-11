@@ -20,8 +20,9 @@ const renderTable = (data, nameTerm) => {
   }
 
   let source = data;
+  console.log(nameTerm);
 
-  if (nameTerm) {
+  if (nameTerm && nameTerm[0]) {
     source = source.filter(
       ({
         first_name,
@@ -39,20 +40,125 @@ const renderTable = (data, nameTerm) => {
         address,
         bitcoin_wallet,
       }) =>
-        last_name.toLowerCase().includes(nameTerm) ||
-        first_name.toLowerCase().includes(nameTerm) ||
-        email.toLowerCase().includes(nameTerm) ||
-        phone_number.includes(nameTerm) ||
-        gender.toLowerCase().includes(nameTerm) ||
-        family.toLowerCase().includes(nameTerm) ||
-        ip_address.includes(nameTerm) ||
-        favourite_color.toLowerCase().includes(nameTerm) ||
-        best_friend.toLowerCase().includes(nameTerm) ||
-        car_make.toLowerCase().includes(nameTerm) ||
-        car_model.toLowerCase().includes(nameTerm) ||
-        car_color.toLowerCase().includes(nameTerm) ||
-        address.toLowerCase().includes(nameTerm) ||
-        bitcoin_wallet.toLowerCase().includes(nameTerm)
+        last_name.toLowerCase().includes(nameTerm[0]) ||
+        first_name.toLowerCase().includes(nameTerm[0]) ||
+        email.toLowerCase().includes(nameTerm[0]) ||
+        phone_number.includes(nameTerm[0]) ||
+        gender.toLowerCase() === nameTerm[0] ||
+        String(family) === nameTerm[0] ||
+        ip_address.includes(nameTerm[0]) ||
+        favourite_color.toLowerCase().concat(".color").includes(nameTerm[0]) ||
+        best_friend.toLowerCase().includes(nameTerm[0]) ||
+        car_make.toLowerCase().includes(nameTerm[0]) ||
+        car_model.toLowerCase().includes(nameTerm[0]) ||
+        car_color.toLowerCase().includes(nameTerm[0]) ||
+        address.toLowerCase().includes(nameTerm[0]) ||
+        bitcoin_wallet.toLowerCase().includes(nameTerm[0])
+    );
+  }
+
+  if (nameTerm && nameTerm[1]) {
+    source = source.filter(
+      ({
+        first_name,
+        last_name,
+        email,
+        phone_number,
+        gender,
+        family,
+        ip_address,
+        favourite_color,
+        best_friend,
+        car_make,
+        car_model,
+        car_color,
+        address,
+        bitcoin_wallet,
+      }) =>
+        last_name.toLowerCase().includes(nameTerm[1]) ||
+        first_name.toLowerCase().includes(nameTerm[1]) ||
+        email.toLowerCase().includes(nameTerm[1]) ||
+        phone_number.includes(nameTerm[1]) ||
+        gender.toLowerCase() === nameTerm[1] ||
+        String(family) === nameTerm[1] ||
+        ip_address.includes(nameTerm[1]) ||
+        favourite_color.toLowerCase().concat(".color").includes(nameTerm[1]) ||
+        best_friend.toLowerCase().includes(nameTerm[1]) ||
+        car_make.toLowerCase().includes(nameTerm[1]) ||
+        car_model.toLowerCase().includes(nameTerm[1]) ||
+        car_color.toLowerCase().includes(nameTerm[1]) ||
+        address.toLowerCase().includes(nameTerm[1]) ||
+        bitcoin_wallet.toLowerCase().includes(nameTerm[1])
+    );
+  }
+
+  if (nameTerm && nameTerm[2]) {
+    source = source.filter(
+      ({
+        first_name,
+        last_name,
+        email,
+        phone_number,
+        gender,
+        family,
+        ip_address,
+        favourite_color,
+        best_friend,
+        car_make,
+        car_model,
+        car_color,
+        address,
+        bitcoin_wallet,
+      }) =>
+        last_name.toLowerCase().includes(nameTerm[2]) ||
+        first_name.toLowerCase().includes(nameTerm[2]) ||
+        email.toLowerCase().includes(nameTerm[2]) ||
+        phone_number.includes(nameTerm[2]) ||
+        gender.toLowerCase() === nameTerm[2] ||
+        String(family) === nameTerm[2] ||
+        ip_address.includes(nameTerm[2]) ||
+        favourite_color.toLowerCase().concat(".color").includes(nameTerm[2]) ||
+        best_friend.toLowerCase().includes(nameTerm[2]) ||
+        car_make.toLowerCase().includes(nameTerm[2]) ||
+        car_model.toLowerCase().includes(nameTerm[2]) ||
+        car_color.toLowerCase().includes(nameTerm[2]) ||
+        address.toLowerCase().includes(nameTerm[2]) ||
+        bitcoin_wallet.toLowerCase().includes(nameTerm[2])
+    );
+  }
+
+  if (nameTerm && nameTerm[3]) {
+    source = source.filter(
+      ({
+        first_name,
+        last_name,
+        email,
+        phone_number,
+        gender,
+        family,
+        ip_address,
+        favourite_color,
+        best_friend,
+        car_make,
+        car_model,
+        car_color,
+        address,
+        bitcoin_wallet,
+      }) =>
+        last_name.toLowerCase().includes(nameTerm[3]) ||
+        first_name.toLowerCase().includes(nameTerm[3]) ||
+        email.toLowerCase().includes(nameTerm[3]) ||
+        phone_number.includes(nameTerm[3]) ||
+        gender.toLowerCase() === nameTerm[3] ||
+        String(family) === nameTerm[3] ||
+        ip_address.includes(nameTerm[3]) ||
+        favourite_color.toLowerCase().concat(".color").includes(nameTerm[3]) ||
+        best_friend.toLowerCase().includes(nameTerm[3]) ||
+        car_make.toLowerCase().includes(nameTerm[3]) ||
+        car_model.toLowerCase().includes(nameTerm[3]) ||
+        car_color.toLowerCase().includes(nameTerm[3]) ||
+        address.toLowerCase().includes(nameTerm[3]) ||
+        bitcoin_wallet.toLowerCase().includes(nameTerm[3])
     );
   }
 
@@ -92,7 +198,26 @@ loadData(`./people.json`).then((data) => renderTable(data));
 const onSubmit = (event) => {
   event.preventDefault();
 
-  const term = event.target.name.value.toLowerCase();
+  const term = [];
+  if (event.target.name.value) {
+    term.push(event.target.name.value.toLowerCase());
+  }
+  if (document.querySelector('input[name="gender"]:checked') !== null) {
+    term.push(document.querySelector('input[name="gender"]:checked').value);
+  }
+
+  if (document.querySelector('input[name="marital_status"]:checked') !== null) {
+    term.push(
+      document.querySelector('input[name="marital_status"]:checked').value ===
+        "married"
+        ? "true"
+        : "false"
+    );
+  }
+
+  if (document.getElementById("colors").value) {
+    term.push(document.getElementById("colors").value + `.color`);
+  }
 
   loadData(`./people.json`).then((data) => renderTable(data, term));
 };

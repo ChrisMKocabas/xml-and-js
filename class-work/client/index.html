@@ -4,15 +4,166 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form onsubmit="onSubmit(event)" onreset="onReset()">
-      <input
-        type="text"
-        name="name"
-        id="input-name-term"
-        placeholder="enter keyword"
-      />
-      <button type="submit">Apply filters</button>
-      <button type="reset">Reset</button>
+    <form id="myForm" onsubmit="onSubmit(event)" onreset="onReset()">
+      <div id="input-field-container">
+        <input
+          type="text"
+          name="name"
+          id="input-name-term"
+          placeholder="enter keyword"
+        />
+        <button type="submit">Apply filters</button>
+        <button type="reset">Reset</button>
+      </div>
+      <div id="container">
+        <fieldset id="gender-container">
+          <legend>Filter by Gender</legend>
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label>
+          </div>
+          <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="female"
+              name="gender"
+              value="female"
+            />
+            <label for="female">Female</label>
+          </div>
+          <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="genderfluid"
+              name="gender"
+              value="genderfluid"
+            />
+            <label for="genderfluid">Genderfluid</label>
+          </div>
+          <br />
+
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="genderqueer"
+              name="gender"
+              value="genderqueer"
+            />
+            <label for="genderqueer">Genderqueer</label>
+          </div>
+          <br />
+
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="non-binary"
+              name="gender"
+              value="non-binary"
+            />
+            <label for="non-binary">Non-binary</label>
+          </div>
+          <br />
+
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="bigender"
+              name="gender"
+              value="bigender"
+            />
+            <label for="bigender">Bigender</label>
+          </div>
+          <br />
+
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="agender"
+              name="gender"
+              value="agender"
+            />
+            <label for="agender">Agender</label>
+          </div>
+          <br />
+
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="polygender"
+              name="gender"
+              value="polygender"
+            />
+            <label for="polygender">Polygender</label>
+          </div>
+          <br />
+        </fieldset>
+        <fieldset id="marital-status">
+          <legend>Marital Status</legend>
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="married"
+              name="marital_status"
+              value="married"
+            />
+            <label for="married">Married</label>
+          </div>
+          <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="single"
+              name="marital_status"
+              value="single"
+            />
+            <label for="single">Single</label>
+          </div>
+          <br />
+        </fieldset>
+      </div>
+      <div id="color-container">
+        <label for="colors">Favourite color:</label>
+
+        <select name="colors" id="colors" onchange="onSubmit(event)">
+          <option value="">Select</option>
+          <option value="khaki">Khaki</option>
+          <option value="puce">Puce</option>
+          <option value="red">Red</option>
+          <option value="indigo">Indigo</option>
+          <option value="mauv">Mauv</option>
+          <option value="yellow">Yellow</option>
+          <option value="green">Green</option>
+          <option value="violet">Violet</option>
+          <option value="blue">Blue</option>
+          <option value="orange">Orange</option>
+          <option value="pink">Pink</option>
+          <option value="teal">Teal</option>
+          <option value="crimson">Crimson</option>
+          <option value="maroon">Maroon</option>
+          <option value="purple">Purple</option>
+          <option value="aquamarine">Aquamarine</option>
+          <option value="turquoise">Turquoise</option>
+          <option value="pink">Pink</option>
+          <option value="goldenrod">Goldenrod</option>
+        </select>
+      </div>
     </form>
     <table>
       <thead>
