@@ -2071,7 +2071,7 @@
         // loadData(`./people.json`).then((data) => renderTable(data));
         getAll().then(({ data }) => renderTable(data));
 
-        const onSubmit = (event) => {
+        window.onSubmit = onSubmit = (event) => {
           event.preventDefault();
 
           const term = [];
@@ -2104,7 +2104,7 @@
           getAll().then(({ data }) => renderTable(data, term));
         };
 
-        const onReset = () => {
+        window.onReset = onReset = () => {
           // loadData(`./people.json`).then((data) => renderTable(data));
           getAll().then(({ data }) => renderTable(data));
         };
