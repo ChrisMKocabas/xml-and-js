@@ -1,0 +1,62 @@
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(248, 248, 248),
+    rgb(127, 210, 245)
+  );
+  line-height: 2.5vw;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.493);
+  border-collapse: separate;
+}
+
+th {
+  background-color: rgb(247, 227, 119);
+}
+
+td {
+  padding: 5px;
+  background-color: whitesmoke;
+}
+
+.resetButton {
+  margin: 15px 10px 0;
+  border: 1px, solid, black;
+}
+
+#myForm {
+  width: fit-content;
+  padding: 1vw;
+}
+
+#container {
+  display: flex;
+}
+
+#gender-container,
+#marital-status,
+#children-status,
+#criminal-status,
+#suicide-status {
+  display: flex;
+  justify-content: space-evenly;
+  height: 200px;
+  width: 150px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#input-field-container {
+  padding: 1vw;
+  justify-content: left;
+}
+
+#headline,
+#headline2 {
+  color: rgb(167, 0, 0);
+  text-align: center;
+}

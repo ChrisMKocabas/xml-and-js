@@ -1,18 +1,4 @@
-// const loadData = (
-//   path // use radio buttons to filter by family and gender. Then use color picker to filter by favourite name
-// ) =>
-//   new Promise((resolve) => {
-//     const xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = ({ target }) => {
-//       if (target.readyState == 4 && target.status == 200) {
-//         resolve(JSON.parse(target.response));
-//       }
-//     };
-//     xhttp.open("GET", path, true);
-//     xhttp.send();
-//   });
-
-const { getAll } = require("./api/products");
+const { getAll } = require("./api/people.js");
 
 const renderTable = (data, nameTerm) => {
   const tableBody = document.getElementById("table-body");
@@ -27,140 +13,164 @@ const renderTable = (data, nameTerm) => {
   if (nameTerm && nameTerm[0]) {
     source = source.filter(
       ({
-        first_name,
-        last_name,
+        name,
+        occupation,
         email,
-        phone_number,
+        phone,
         gender,
-        family,
-        ip_address,
-        favourite_color,
-        best_friend,
-        car_make,
-        car_model,
-        car_color,
-        address,
-        bitcoin_wallet,
+        married,
+        has_children,
+        criminal_record,
+        blackmailed_by,
+        blackmailed_through,
+        ransom_paid,
+        committed_suicide,
+        murdered_blackmailer_on,
+        iq_level,
       }) =>
-        last_name.toLowerCase().includes(nameTerm[0]) ||
-        first_name.toLowerCase().includes(nameTerm[0]) ||
+        name.toLowerCase().includes(nameTerm[0]) ||
+        occupation.toLowerCase().includes(nameTerm[0]) ||
         email.toLowerCase().includes(nameTerm[0]) ||
-        phone_number.includes(nameTerm[0]) ||
+        phone.includes(nameTerm[0]) ||
         gender.toLowerCase() === nameTerm[0] ||
-        String(family) === nameTerm[0] ||
-        ip_address.includes(nameTerm[0]) ||
-        favourite_color.toLowerCase().concat(".color").includes(nameTerm[0]) ||
-        best_friend.toLowerCase().includes(nameTerm[0]) ||
-        car_make.toLowerCase().includes(nameTerm[0]) ||
-        car_model.toLowerCase().includes(nameTerm[0]) ||
-        car_color.toLowerCase().includes(nameTerm[0]) ||
-        address.toLowerCase().includes(nameTerm[0]) ||
-        bitcoin_wallet.toLowerCase().includes(nameTerm[0])
+        String(married) === nameTerm[0] ||
+        has_children.toLowerCase().concat(".children").includes(nameTerm[0]) ||
+        criminal_record
+          .toLowerCase()
+          .concat(".criminal")
+          .includes(nameTerm[0]) ||
+        blackmailed_by.toLowerCase().includes(nameTerm[0]) ||
+        blackmailed_through.toLowerCase().includes(nameTerm[0]) ||
+        ransom_paid.includes(nameTerm[0]) ||
+        committed_suicide
+          .toLowerCase()
+          .concat(".suicide")
+          .includes(nameTerm[0]) ||
+        murdered_blackmailer_on.includes(nameTerm[0]) ||
+        iq_level === nameTerm[0]
     );
   }
 
   if (nameTerm && nameTerm[1]) {
     source = source.filter(
       ({
-        first_name,
-        last_name,
+        name,
+        occupation,
         email,
-        phone_number,
+        phone,
         gender,
-        family,
-        ip_address,
-        favourite_color,
-        best_friend,
-        car_make,
-        car_model,
-        car_color,
-        address,
-        bitcoin_wallet,
+        married,
+        has_children,
+        criminal_record,
+        blackmailed_by,
+        blackmailed_through,
+        ransom_paid,
+        committed_suicide,
+        murdered_blackmailer_on,
+        iq_level,
       }) =>
-        last_name.toLowerCase().includes(nameTerm[1]) ||
-        first_name.toLowerCase().includes(nameTerm[1]) ||
+        name.toLowerCase().includes(nameTerm[1]) ||
+        occupation.toLowerCase().includes(nameTerm[1]) ||
         email.toLowerCase().includes(nameTerm[1]) ||
-        phone_number.includes(nameTerm[1]) ||
+        phone.includes(nameTerm[1]) ||
         gender.toLowerCase() === nameTerm[1] ||
-        String(family) === nameTerm[1] ||
-        ip_address.includes(nameTerm[1]) ||
-        favourite_color.toLowerCase().concat(".color").includes(nameTerm[1]) ||
-        best_friend.toLowerCase().includes(nameTerm[1]) ||
-        car_make.toLowerCase().includes(nameTerm[1]) ||
-        car_model.toLowerCase().includes(nameTerm[1]) ||
-        car_color.toLowerCase().includes(nameTerm[1]) ||
-        address.toLowerCase().includes(nameTerm[1]) ||
-        bitcoin_wallet.toLowerCase().includes(nameTerm[1])
+        String(married) === nameTerm[1] ||
+        has_children.toLowerCase().concat(".children").includes(nameTerm[1]) ||
+        criminal_record
+          .toLowerCase()
+          .concat(".criminal")
+          .includes(nameTerm[1]) ||
+        blackmailed_by.toLowerCase().includes(nameTerm[1]) ||
+        blackmailed_through.toLowerCase().includes(nameTerm[1]) ||
+        ransom_paid.includes(nameTerm[1]) ||
+        committed_suicide
+          .toLowerCase()
+          .concat(".suicide")
+          .includes(nameTerm[1]) ||
+        murdered_blackmailer_on.includes(nameTerm[1]) ||
+        iq_level === nameTerm[1]
     );
   }
 
   if (nameTerm && nameTerm[2]) {
     source = source.filter(
       ({
-        first_name,
-        last_name,
+        name,
+        occupation,
         email,
-        phone_number,
+        phone,
         gender,
-        family,
-        ip_address,
-        favourite_color,
-        best_friend,
-        car_make,
-        car_model,
-        car_color,
-        address,
-        bitcoin_wallet,
+        married,
+        has_children,
+        criminal_record,
+        blackmailed_by,
+        blackmailed_through,
+        ransom_paid,
+        committed_suicide,
+        murdered_blackmailer_on,
+        iq_level,
       }) =>
-        last_name.toLowerCase().includes(nameTerm[2]) ||
-        first_name.toLowerCase().includes(nameTerm[2]) ||
+        name.toLowerCase().includes(nameTerm[2]) ||
+        occupation.toLowerCase().includes(nameTerm[2]) ||
         email.toLowerCase().includes(nameTerm[2]) ||
-        phone_number.includes(nameTerm[2]) ||
+        phone.includes(nameTerm[2]) ||
         gender.toLowerCase() === nameTerm[2] ||
-        String(family) === nameTerm[2] ||
-        ip_address.includes(nameTerm[2]) ||
-        favourite_color.toLowerCase().concat(".color").includes(nameTerm[2]) ||
-        best_friend.toLowerCase().includes(nameTerm[2]) ||
-        car_make.toLowerCase().includes(nameTerm[2]) ||
-        car_model.toLowerCase().includes(nameTerm[2]) ||
-        car_color.toLowerCase().includes(nameTerm[2]) ||
-        address.toLowerCase().includes(nameTerm[2]) ||
-        bitcoin_wallet.toLowerCase().includes(nameTerm[2])
+        String(married) === nameTerm[2] ||
+        has_children.toLowerCase().concat(".children").includes(nameTerm[2]) ||
+        criminal_record
+          .toLowerCase()
+          .concat(".criminal")
+          .includes(nameTerm[2]) ||
+        blackmailed_by.toLowerCase().includes(nameTerm[2]) ||
+        blackmailed_through.toLowerCase().includes(nameTerm[2]) ||
+        ransom_paid.includes(nameTerm[2]) ||
+        committed_suicide
+          .toLowerCase()
+          .concat(".suicide")
+          .includes(nameTerm[2]) ||
+        murdered_blackmailer_on.includes(nameTerm[2]) ||
+        iq_level === nameTerm[2]
     );
   }
 
   if (nameTerm && nameTerm[3]) {
     source = source.filter(
       ({
-        first_name,
-        last_name,
+        name,
+        occupation,
         email,
-        phone_number,
+        phone,
         gender,
-        family,
-        ip_address,
-        favourite_color,
-        best_friend,
-        car_make,
-        car_model,
-        car_color,
-        address,
-        bitcoin_wallet,
+        married,
+        has_children,
+        criminal_record,
+        blackmailed_by,
+        blackmailed_through,
+        ransom_paid,
+        committed_suicide,
+        murdered_blackmailer_on,
+        iq_level,
       }) =>
-        last_name.toLowerCase().includes(nameTerm[3]) ||
-        first_name.toLowerCase().includes(nameTerm[3]) ||
+        name.toLowerCase().includes(nameTerm[3]) ||
+        occupation.toLowerCase().includes(nameTerm[3]) ||
         email.toLowerCase().includes(nameTerm[3]) ||
-        phone_number.includes(nameTerm[3]) ||
+        phone.includes(nameTerm[3]) ||
         gender.toLowerCase() === nameTerm[3] ||
-        String(family) === nameTerm[3] ||
-        ip_address.includes(nameTerm[3]) ||
-        favourite_color.toLowerCase().concat(".color").includes(nameTerm[3]) ||
-        best_friend.toLowerCase().includes(nameTerm[3]) ||
-        car_make.toLowerCase().includes(nameTerm[3]) ||
-        car_model.toLowerCase().includes(nameTerm[3]) ||
-        car_color.toLowerCase().includes(nameTerm[3]) ||
-        address.toLowerCase().includes(nameTerm[3]) ||
-        bitcoin_wallet.toLowerCase().includes(nameTerm[3])
+        String(married) === nameTerm[3] ||
+        has_children.toLowerCase().concat(".children").includes(nameTerm[3]) ||
+        criminal_record
+          .toLowerCase()
+          .concat(".criminal")
+          .includes(nameTerm[3]) ||
+        blackmailed_by.toLowerCase().includes(nameTerm[3]) ||
+        blackmailed_through.toLowerCase().includes(nameTerm[3]) ||
+        ransom_paid.includes(nameTerm[3]) ||
+        committed_suicide
+          .toLowerCase()
+          .concat(".suicide")
+          .includes(nameTerm[3]) ||
+        murdered_blackmailer_on.includes(nameTerm[3]) ||
+        iq_level === nameTerm[3]
     );
   }
 
@@ -169,26 +179,26 @@ const renderTable = (data, nameTerm) => {
       acc,
       {
         id,
-        first_name,
-        last_name,
+        name,
+        occupation,
         email,
-        phone_number,
+        phone,
         gender,
-        family,
-        ip_address,
-        favourite_color,
-        best_friend,
-        car_make,
-        car_model,
-        car_color,
-        address,
-        bitcoin_wallet,
+        married, //
+        has_children, //
+        criminal_record, //
+        blackmailed_by,
+        blackmailed_through,
+        ransom_paid,
+        committed_suicide, //
+        murdered_blackmailer_on,
+        iq_level,
       }
     ) =>
       acc +
-      `<tr id="table-row-${id}"><td>${id}</td><td>${first_name}</td><td>${last_name}</td><td>${email}</td><td>${phone_number}</td>
-      <td>${gender}</td><td>${family}</td><td>${ip_address}</td><td>${favourite_color}</td><td>${best_friend}</td><td>${car_make}</td>
-      <td>${car_model}</td><td>${car_color}</td><td>${address}</td><td>${bitcoin_wallet}</td></tr>`,
+      `<tr id="table-row-${id}"><td>${id}</td><td>${name}</td><td>${occupation}</td><td>${email}</td><td>${phone}</td>
+      <td>${gender}</td><td>${married}</td><td>${has_children}</td><td>${criminal_record}</td><td>${blackmailed_by}</td><td>${blackmailed_through}</td>
+      <td>${ransom_paid}</td><td>${committed_suicide}</td><td>${murdered_blackmailer_on}</td><td>${iq_level}</td></tr>`,
     ``
   );
 
@@ -217,9 +227,32 @@ const onSubmit = (event) => {
         : "false"
     );
   }
+  if (document.querySelector('input[name="children"]:checked') !== null) {
+    term.push(
+      document.querySelector('input[name="children"]:checked').value ===
+        "has-kids"
+        ? "true.kids"
+        : "false.kids"
+    );
+  }
+  if (
+    document.querySelector('input[name="criminal-record"]:checked') !== null
+  ) {
+    term.push(
+      document.querySelector('input[name="criminal-record"]:checked').value ===
+        "has-record"
+        ? "true.criminal"
+        : "false.criminal"
+    );
+  }
 
-  if (document.getElementById("colors").value) {
-    term.push(document.getElementById("colors").value + `.color`);
+  if (document.querySelector('input[name="suicide"]:checked') !== null) {
+    term.push(
+      document.querySelector('input[name="suicide"]:checked').value ===
+        "committed-suicide"
+        ? "true.suicide"
+        : "false.suicide"
+    );
   }
 
   // loadData(`./people.json`).then((data) => renderTable(data, term));

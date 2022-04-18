@@ -1,9 +1,11 @@
 <html>
   <head>
-    <title>Test Input</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Blackmail Victim Criminals Database</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1 id="headline">Correctional Service of Canada</h1>
+    <h2 id="headline2">Blackmail Victim Criminals Database</h2>
     <form id="myForm" onsubmit="onSubmit(event)" onreset="onReset()">
       <div id="input-field-container">
         <input
@@ -12,9 +14,16 @@
           id="input-name-term"
           placeholder="enter keyword"
         />
+        <input
+          type="text"
+          name="id"
+          id="input-id-term"
+          placeholder="enter id number"
+        />
         <button type="submit">Apply filters</button>
         <button type="reset">Reset</button>
       </div>
+
       <div id="container">
         <fieldset id="gender-container">
           <legend>Filter by Gender</legend>
@@ -38,77 +47,6 @@
               value="female"
             />
             <label for="female">Female</label>
-          </div>
-          <br />
-          <div>
-            <input
-              type="radio"
-              onchange="onSubmit(event)"
-              id="genderfluid"
-              name="gender"
-              value="genderfluid"
-            />
-            <label for="genderfluid">Genderfluid</label>
-          </div>
-          <br />
-
-          <div>
-            <input
-              type="radio"
-              onchange="onSubmit(event)"
-              id="genderqueer"
-              name="gender"
-              value="genderqueer"
-            />
-            <label for="genderqueer">Genderqueer</label>
-          </div>
-          <br />
-
-          <div>
-            <input
-              type="radio"
-              onchange="onSubmit(event)"
-              id="non-binary"
-              name="gender"
-              value="non-binary"
-            />
-            <label for="non-binary">Non-binary</label>
-          </div>
-          <br />
-
-          <div>
-            <input
-              type="radio"
-              onchange="onSubmit(event)"
-              id="bigender"
-              name="gender"
-              value="bigender"
-            />
-            <label for="bigender">Bigender</label>
-          </div>
-          <br />
-
-          <div>
-            <input
-              type="radio"
-              onchange="onSubmit(event)"
-              id="agender"
-              name="gender"
-              value="agender"
-            />
-            <label for="agender">Agender</label>
-          </div>
-          <br />
-
-          <div>
-            <input
-              type="radio"
-              onchange="onSubmit(event)"
-              id="polygender"
-              name="gender"
-              value="polygender"
-            />
-            <label for="polygender">Polygender</label>
           </div>
           <br />
         </fieldset>
@@ -137,52 +75,101 @@
           </div>
           <br />
         </fieldset>
-      </div>
-      <div id="color-container">
-        <label for="colors">Favourite color:</label>
-
-        <select name="colors" id="colors" onchange="onSubmit(event)">
-          <option value="">Select</option>
-          <option value="khaki">Khaki</option>
-          <option value="puce">Puce</option>
-          <option value="red">Red</option>
-          <option value="indigo">Indigo</option>
-          <option value="mauv">Mauv</option>
-          <option value="yellow">Yellow</option>
-          <option value="green">Green</option>
-          <option value="violet">Violet</option>
-          <option value="blue">Blue</option>
-          <option value="orange">Orange</option>
-          <option value="pink">Pink</option>
-          <option value="teal">Teal</option>
-          <option value="crimson">Crimson</option>
-          <option value="maroon">Maroon</option>
-          <option value="purple">Purple</option>
-          <option value="aquamarine">Aquamarine</option>
-          <option value="turquoise">Turquoise</option>
-          <option value="pink">Pink</option>
-          <option value="goldenrod">Goldenrod</option>
-        </select>
+        <fieldset id="children-status">
+          <legend>Children</legend>
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="has-kids"
+              name="children"
+              value="has-kids"
+            />
+            <label for="has-kids">Has Children</label>
+          </div>
+          <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="no-kids"
+              name="children"
+              value="no-kids"
+            />
+            <label for="no-kids">No Children</label>
+          </div>
+          <br />
+        </fieldset>
+        <fieldset id="criminal-status">
+          <legend>Prior Criminal Record</legend>
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="has-record"
+              name="criminal-record"
+              value="has-record"
+            />
+            <label for="has-record">Has Record</label>
+          </div>
+          <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="no-record"
+              name="criminal-record"
+              value="no-record"
+            />
+            <label for="no-kids">No Record</label>
+          </div>
+          <br />
+        </fieldset>
+        <fieldset id="suicide-status">
+          <legend>Committed Suicide</legend>
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="committed-suicide"
+              name="suicide"
+              value="committed-suicide"
+            />
+            <label for="committed-suicide">Yes</label>
+          </div>
+          <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="no-suicide"
+              name="suicide"
+              value="no-suicide"
+            />
+            <label for="no-suicide">No</label>
+          </div>
+          <br />
+        </fieldset>
       </div>
     </form>
     <table>
       <thead>
         <tr>
           <th>ID</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
+          <th>Full Name</th>
+          <th>Occupation</th>
           <th>Email</th>
           <th>Phone Number</th>
           <th>Gender</th>
           <th>Family</th>
-          <th>IP Address</th>
-          <th>Favourite Color</th>
-          <th>Best Friend</th>
-          <th>Car Make</th>
-          <th>Car Model</th>
-          <th>Car Color</th>
-          <th>Address</th>
-          <th>Bitcoin Address</th>
+          <th>Children</th>
+          <th>Priod Criminal Record</th>
+          <th>Blackmailer User ID</th>
+          <th>Blackmailed Through Website</th>
+          <th>Ransom Paid</th>
+          <th>Committed Suicide?</th>
+          <th>Murdered Blackmailer On</th>
+          <th>IQ Level</th>
         </tr>
       </thead>
       <tbody id="table-body"></tbody>
