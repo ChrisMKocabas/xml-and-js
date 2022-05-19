@@ -44,7 +44,7 @@ td {
 #suicide-status {
   display: flex;
   justify-content: space-evenly;
-  height: 200px;
+  height: auto;
   width: 150px;
   flex-direction: column;
   flex-wrap: wrap;

@@ -259,7 +259,9 @@ const onSubmit = (event) => {
   getAll().then(({ data }) => renderTable(data, term));
 };
 
-const onReset = () => {
+const form = document.getElementById(`myForm`);
+
+form.onReset = () => {
   // loadData(`./people.json`).then((data) => renderTable(data));
   getAll().then(({ data }) => renderTable(data));
 };

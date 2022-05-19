@@ -49,6 +49,17 @@
             <label for="female">Female</label>
           </div>
           <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="all-gender"
+              name="gender"
+              value=""
+            />
+            <label for="all-gender">All</label>
+          </div>
+          <br />
         </fieldset>
         <fieldset id="marital-status">
           <legend>Marital Status</legend>
@@ -74,6 +85,16 @@
             <label for="single">Single</label>
           </div>
           <br />
+          <div>
+            <input
+              type="radio"
+              onchange="onSubmit(event)"
+              id="all-marital"
+              name="marital_status"
+              value=""
+            />
+            <label for="all-marital">All</label>
+          </div>
         </fieldset>
         <fieldset id="children-status">
           <legend>Children</legend>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>​
+
+<!-- Activity 1 - Part 1 -->
+<!-- Start of my self introduction -->
+<introduceMe>​
+  <name> Muhammed Kocabas</name>​
+  <definition>Hello, this is my introduction. </definition>​
+  <background>I am from Turkey, married with a 5 year old son and extensive private and public sector 
+  experience in Business administration. I am in my early thirties (33 to be specific), relatively older than my peers and with no previous 
+  history in this field. What got me hooked with programming though, is my falling in love with Python and deciding that 
+  I deeply enjoy creating scripts and programs from scratch.</background>
+  <hobbies>Cooking, Programming, Gaming, Trekking </hobbies>
+  <interests>Crypto mining</interests>
+</introduceMe>
+<!-- End of my self introduction -->
+
+<!-- Activity 1 - Part 2 -->
+<!-- Modifying and adding scalibility to hold information for 10 people-->
+<introduceEm>​
+  <person>
+    <name>Eric Cartman</name>​
+    <hobbies>Eating, Cussing</hobbies>
+  </person>
+
+  <person>
+    <name>Kenny McCormick</name>​
+    <hobbies>Muttering</hobbies>
+  </person>
+
+  <person>
+    <name>Stan Marsh</name>​
+    <hobbies>Chatting</hobbies>
+  </person>
+
+  <person>
+    <name>Kyle Broflovski</name>​
+    <hobbies>Playing</hobbies>
+  </person>
+
+  <person>
+    <name>Frank Sinatra</name>​
+    <hobbies>Singing</hobbies>
+  </person>
+
+  <person>
+    <name>Dean Martin</name>​
+    <hobbies>Swaying</hobbies>
+  </person>
+
+  <person>
+    <name>Hulk Hulkinson</name>​
+    <hobbies>Smashing</hobbies>
+  </person>
+
+  <person>
+    <name>Thor Odinson</name>​
+    <hobbies>Hammering</hobbies>
+  </person>
+
+  <person>
+    <name>Random Student</name>​
+    <hobbies>Homeworking</hobbies>
+  </person>
+
+  <person>
+    <name>Sars-Cov-2</name>​
+    <hobbies>Mutating, Spreading, Turning people's lifes into hell</hobbies>
+  </person>
+
+</introduceEm>
+
+<!-- End of introducing 10 people by means of modifying our first code block -->
